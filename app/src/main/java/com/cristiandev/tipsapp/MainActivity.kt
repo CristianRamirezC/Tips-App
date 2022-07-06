@@ -2,6 +2,7 @@ package com.cristiandev.tipsapp
 
 import android.content.res.Resources
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.cristiandev.tipsapp.databinding.ActivityMainBinding
 import java.text.NumberFormat
@@ -24,10 +25,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun printTipResult() {
-        val tipCalculator = TipCalculator()
-        val tipResult: Double = tipCalculator.calculateTip(serviceCost, roundUp,rgTipOptions)
-        val formattedTip = NumberFormat.getCurrencyInstance().format(tipResult)
-        binding.tvTipAmount.text = getString(R.string.tip_amount, formattedTip)
+        if (serviceCost.isNotEmpty()) {
+            val tipCalculator = TipCalculator()
+            val tipResult: Double = tipCalculator.calculateTip(serviceCost, roundUp, rgTipOptions)
+            val formattedTip = NumberFormat.getCurrencyInstance().format(tipResult)
+            binding.tvTipAmount.text = getString(R.string.tip_amount, formattedTip)
+        } else {
+            Toast
+                .makeText(this, "Please enter a service cost!", Toast.LENGTH_SHORT)
+                .show()
+        }
     }
 
     private fun setVariables() {

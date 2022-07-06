@@ -28,24 +28,24 @@
         android:id="@+id/rgTipOptions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:checkedButton="@id/rbTwentyPercentOption"
+        android:checkedButton="@id/rbAmazingOption"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvServiceQuestion">
 
         <RadioButton
-            android:id="@+id/rbTwentyPercentOption"
+            android:id="@+id/rbAmazingOption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/amazing_20" />
 
         <RadioButton
-            android:id="@+id/rbEighteenPercentOption"
+            android:id="@+id/rbGoodOption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/good_18" />
 
         <RadioButton
-            android:id="@+id/rbFifteenPercentOption"
+            android:id="@+id/rbOKOption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/ok_15" />
